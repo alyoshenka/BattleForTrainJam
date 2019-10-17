@@ -96,7 +96,11 @@ public class ControllerInputManager : MonoBehaviour
 
     public bool AllPlayersReadyForEnemies()
     {
-        return false;
+        foreach(CharacterController cc in activePlayers)
+        {
+            if (!cc.hasTurnedOnFlashlight) { return false; }
+        }
+        return true;
     }
 
     public static void AddActivePlayer(CharacterController newChar)
