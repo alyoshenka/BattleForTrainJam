@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawning : MonoBehaviour
 {
+    [SerializeField]
     bool enabled = false;
     [SerializeField]
     GameObject enemyPrefab = default;
@@ -34,7 +35,7 @@ public class EnemySpawning : MonoBehaviour
         }
         if (spawnTime >= spawnInterval)
         {
-            spawnEnemies(1, (spaceController.GetLerpedValue() / 2) * 67);
+            spawnEnemies(1, (spaceController.GetLerpedValue() / 2) + 5);
 
             spawnTime = 0;
         }
