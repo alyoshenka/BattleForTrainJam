@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SpaceController : MonoBehaviour
 {
-
-
     float lerpGoal = 1;
     float lerpFraction = 1;
     float lerpedValue;
