@@ -33,6 +33,8 @@ public class CharacterController : MonoBehaviour
     public bool isConnected { get; set; }
     public bool isReady { get; set; }
 
+    public bool ThisIsNotTheFinalScene = true;
+
     // holders
     Vector2 movementInput, movementVector;
     Quaternion targetRotation;
@@ -51,6 +53,8 @@ public class CharacterController : MonoBehaviour
         isConnected = isReady = false;
 
         TurnOffFlashlight();
+
+        gameObject.SetActive(ThisIsNotTheFinalScene);
     }
 
     // Update is called once per frame
@@ -118,6 +122,11 @@ public class CharacterController : MonoBehaviour
     }
 
     public void ConnectUI()
+    {
+        Debug.Log(name + " ui change here");
+    }
+
+    public void ReadyUI()
     {
         Debug.Log(name + " ui change here");
     }
