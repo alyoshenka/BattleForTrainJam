@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// ToDo
-// change from category to layout
+using Rewired;
 
 /// <summary>
 /// connects controllers to players
 /// </summary>
 public class ControllerInputManager : MonoBehaviour
 {
-    const int maxPlayerCount = 4; // maximum number of players allowed
+    public static int maxPlayerCount = 4; // maximum number of players allowed
 
     [Tooltip("Controllable characters")] public CharacterController[] characters;
     [Tooltip("Disable players without controllers?")] public bool areUnusedDisabled = true;
+
+    static List<CharacterController> activePlayers;
     
     // Start is called before the first frame update
     void Start()
@@ -40,11 +40,74 @@ public class ControllerInputManager : MonoBehaviour
         {
             characters[i].playerID = i;
         }
+
+        if(null == activePlayers) { activePlayers = new List<CharacterController>(); }
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool PressedStart()
     {
-        
+        foreach(CharacterController cc in characters)
+        {
+            if (ReInput.players.GetPlayer(cc.playerID).GetAnyButtonDown()) { return true; }
+        }
+        return false;
+    }
+
+    void CheckForConnections()
+    {
+        foreach (CharacterController cc in characters)
+        {
+            if (!cc.isConnected)
+            {
+                if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Connect"))
+                {
+                    cc.gameObject.SetActive(true);
+                    cc.isConnected = true;
+                    cc.ConnectUI();
+                    activePlayers.Add(cc);
+
+                    Debug.Log(cc.name + " connected");
+                }
+            }
+        }
+    }
+
+    public bool AllConnectedPlayersReady()
+    {
+        CheckForConnections();
+
+        foreach (CharacterController cc in activePlayers)
+        {
+            if (!cc.isReady)
+            {
+                if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Ready"))
+                {
+                    cc.isReady = true;
+                    Debug.Log(cc.name + " ready");
+                    cc.ReadyUI();
+                }
+                else { return false; }
+            }
+        }
+        if(activePlayers.Count < 1) { return false; }
+
+        return true;
+    }
+
+    public bool AllPlayersReadyForEnemies()
+    {
+        return false;
+    }
+
+    public static void AddActivePlayer(CharacterController newChar)
+    {
+        if (!activePlayers.Contains(newChar))
+        {
+            activePlayers.Add(newChar);
+            if (activePlayers.Count >= maxPlayerCount)
+            {
+                Debug.LogError("too many players");
+            }
+        }
     }
 }

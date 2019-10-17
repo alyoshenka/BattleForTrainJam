@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SpaceController : MonoBehaviour
 {
-
-
     float lerpGoal = 1;
     float lerpFraction = 1;
     float lerpedValue;
@@ -56,7 +54,7 @@ public class SpaceController : MonoBehaviour
             }
         }
         lerpedValue = Mathf.Lerp(minScale, maxScale, lerpFraction);
-        borderTransform.localScale = new Vector3(lerpedValue, lerpedValue, lerpedValue);
+        borderTransform.localScale = new Vector3(lerpedValue, borderTransform.localScale.y, lerpedValue);
     }
 
     public void SetBorderScale(float scale)
