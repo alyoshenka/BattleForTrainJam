@@ -14,6 +14,7 @@ public class CharacterController : MonoBehaviour
 
     [Header("Cosmetics")]
     [Tooltip("How fast the player rotates")] [Range(0.01f, 0.5f)] public float rotationLerp = 0.2f;
+    [Tooltip("Minimum velocity magnitude to rotate")] public float minimumVelocityRotationThreshold = 0.1f;
 
     [Tooltip("Rewired ID")]
     public int playerID;
@@ -41,7 +42,7 @@ public class CharacterController : MonoBehaviour
     {
         GetInput();
         Move();
-        Rotate();
+        if (myRigidbody.velocity.magnitude > minimumVelocityRotationThreshold) { Rotate(); }
     }
 
     /// <summary>
