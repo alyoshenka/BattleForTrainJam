@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawning : MonoBehaviour
 {
-
+    bool enabled = false;
     [SerializeField]
     GameObject enemyPrefab = default;
     [SerializeField]
@@ -28,7 +28,10 @@ public class EnemySpawning : MonoBehaviour
             spawnEnemies(1, spaceController.GetLerpedValue() / 2);
         }
 
-        spawnTime += Time.deltaTime;
+        if (enabled)
+        {
+            spawnTime += Time.deltaTime;
+        }
         if (spawnTime >= spawnInterval)
         {
             spawnEnemies(1, (spaceController.GetLerpedValue() / 2) * 67);
@@ -42,7 +45,6 @@ public class EnemySpawning : MonoBehaviour
         for (int i = 0; i < numToBeSpawned; i++)
         {
             float randomRotation = Random.Range(1, 360);
-            Debug.Log(randomRotation);
 
             float rotationInRadians = ((randomRotation) * (Mathf.PI / 180)); // Convert to radians
             float rotatedX = Mathf.Cos(rotationInRadians) - Mathf.Sin(rotationInRadians);
@@ -53,5 +55,10 @@ public class EnemySpawning : MonoBehaviour
             Instantiate<GameObject>(Mathf.Round(Random.Range(1,5)) == 1 ? bigEnemyPrefab : enemyPrefab , enemyPosition, Quaternion.identity);
         }
         
+    }
+
+    public void SetEnabled(bool _enabled)
+    {
+        enabled = _enabled;
     }
 }
