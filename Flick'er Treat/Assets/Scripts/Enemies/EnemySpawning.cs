@@ -9,7 +9,7 @@ public class EnemySpawning : MonoBehaviour
     [SerializeField]
     GameObject enemyPrefab;
     [SerializeField]
-    SpaceController spaceController;
+    SpaceController spaceController = default;
 
     void Start()
     {
@@ -21,11 +21,10 @@ public class EnemySpawning : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             spawnEnemies(1, spaceController.GetLerpedValue() / 2);
-            Debug.Log(spaceController.GetLerpedValue());
         }
     }
 
-    void spawnEnemies(float numToBeSpawned, float radius)
+    public void spawnEnemies(float numToBeSpawned, float radius)
     {
         for (int i = 0; i < numToBeSpawned; i++)
         {

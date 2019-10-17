@@ -17,7 +17,7 @@ public class SpaceController : MonoBehaviour
     [SerializeField]
     float GrowthSpeed = 1.5f;
     [SerializeField]
-    Transform borderTransform;
+    Transform borderTransform = default;
 
     private void Start()
     {
