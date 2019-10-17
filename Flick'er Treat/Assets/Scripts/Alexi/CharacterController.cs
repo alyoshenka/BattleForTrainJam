@@ -9,8 +9,13 @@ using Rewired;
 [RequireComponent(typeof(Rigidbody))]
 public class CharacterController : MonoBehaviour
 {
+    [Header("Components")]
+    [Tooltip("Flasklight object")] public GameObject flashlight;
+    public GameObject connectionScreen;
+
     [Header("Controls")]
-    [Tooltip("Movement force")] public float movementForce;
+    [Tooltip("Movement force - flashlight ON")] public float movementForceOn;
+    [Tooltip("Movement force - flashlight OFF")] public float movementForceOff;
 
     [Header("Cosmetics")]
     [Tooltip("How fast the player rotates")] [Range(0.01f, 0.5f)] public float rotationLerp = 0.2f;
@@ -23,9 +28,15 @@ public class CharacterController : MonoBehaviour
     Player player; // rewired player
     Rigidbody myRigidbody;
 
+    // states
+    bool isFlashlightOn;
+    public bool isConnected { get; set; }
+    public bool isReady { get; set; }
+
     // holders
     Vector2 movementInput, movementVector;
     Quaternion targetRotation;
+    float movementForce;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +46,11 @@ public class CharacterController : MonoBehaviour
 
         movementInput = Vector2.zero;
         targetRotation = Quaternion.identity;
+
+        connectionScreen.SetActive(false);
+        isConnected = isReady = false;
+
+        TurnOffFlashlight();
     }
 
     // Update is called once per frame
@@ -51,6 +67,15 @@ public class CharacterController : MonoBehaviour
     void GetInput()
     {
         movementInput = new Vector2(player.GetAxis("MoveHorizontal"), player.GetAxis("MoveVertical")).normalized;
+
+        if (player.GetButtonDown("Flashlight"))
+        {
+            TurnOnFlashlight();
+        }
+        else if (player.GetButtonUp("Flashlight"))
+        {
+            TurnOffFlashlight();
+        }
     }
 
     /// <summary>
@@ -74,5 +99,26 @@ public class CharacterController : MonoBehaviour
         if(currentAngle - targetAngle > 180) { currentAngle -= 360; }
         float rotation = Mathf.Lerp(currentAngle, targetAngle, rotationLerp);
         transform.rotation = Quaternion.Euler(0, rotation, 0);
+    }
+
+    void TurnOnFlashlight()
+    {
+        movementForce = movementForceOn;
+        isFlashlightOn = true;
+
+        flashlight.SetActive(true);
+    }
+
+    void TurnOffFlashlight()
+    {
+        movementForce = movementForceOff;
+        isFlashlightOn = false;
+
+        flashlight.SetActive(false);
+    }
+
+    public void ConnectUI()
+    {
+        Debug.Log(name + " ui change here");
     }
 }
