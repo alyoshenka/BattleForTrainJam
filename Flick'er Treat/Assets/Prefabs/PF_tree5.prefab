@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1176545756894784359}
   - component: {fileID: 1176545756893784487}
   m_Layer: 0
-  m_Name: tree5
+  m_Name: PF_tree5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6dc0b04e2fc71245afacdc2d9584b41, type: 3}
+  - {fileID: 2100000, guid: ed6f4cc7db5ffd244ad2458ac530f37e, type: 2}
   - {fileID: 2100000, guid: f83be8f5b28701d47b7196df22e15219, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
