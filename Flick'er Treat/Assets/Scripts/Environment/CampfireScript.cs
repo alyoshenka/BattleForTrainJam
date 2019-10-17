@@ -11,7 +11,7 @@ public class CampfireScript : MonoBehaviour
     float cachedHealth;
 
     [SerializeField]
-    SpaceController spaceController;
+    SpaceController spaceController = default;
 
     void Start()
     {
