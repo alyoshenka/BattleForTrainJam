@@ -49,7 +49,6 @@ public class EnemySpawning : MonoBehaviour
 
             Vector3 enemyPosition = new Vector3(rotatedX, 0, rotatedZ).normalized * radius;
             enemyPosition.y = 5;
-            Debug.Log(enemyPosition);
             Instantiate<GameObject>(Mathf.Round(Random.Range(1,5)) == 1 ? bigEnemyPrefab : enemyPrefab , enemyPosition, Quaternion.identity);
         }
         

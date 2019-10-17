@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470aaae1eb5ad544a9f8b79c3a07e53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 30
   damageInterval: 1
   spaceController: {fileID: 1864584026337303983}
   penetratingEnemies: []
@@ -144,7 +144,7 @@ MonoBehaviour:
   bigEnemyPrefab: {fileID: 3432773463487502536, guid: 3c5b1b5d6cc0fa4438639ac573195ebe,
     type: 3}
   spaceController: {fileID: 1864584026337303983}
-  spawnInterval: 3
+  spawnInterval: 10
 --- !u!135 &285947235
 SphereCollider:
   m_ObjectHideFlags: 0
