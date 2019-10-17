@@ -72,6 +72,8 @@ public class Enemy : MonoBehaviour
         {
             flee();
         }
+
+        transform.LookAt(target.transform);
     }
 
     private void approach()

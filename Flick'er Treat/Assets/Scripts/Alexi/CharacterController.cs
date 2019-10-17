@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour
 {
     [Header("Components")]
     [Tooltip("Flasklight object")] public GameObject flashlight;
-    public GameObject connectionScreen;
+    public CharacterSelection connectionScreen;
 
     [Header("Controls")]
     [Tooltip("Movement force - flashlight ON")] public float movementForceOn;
@@ -30,6 +30,7 @@ public class CharacterController : MonoBehaviour
 
     // states
     bool isFlashlightOn;
+    public bool hasTurnedOnFlashlight { get; private set; }
     public bool isConnected { get; set; }
     public bool isReady { get; set; }
 
@@ -49,7 +50,6 @@ public class CharacterController : MonoBehaviour
         movementInput = Vector2.zero;
         targetRotation = Quaternion.identity;
 
-        connectionScreen.SetActive(false);
         isConnected = isReady = false;
 
         TurnOffFlashlight();
@@ -109,6 +109,7 @@ public class CharacterController : MonoBehaviour
     {
         movementForce = movementForceOn;
         isFlashlightOn = true;
+        hasTurnedOnFlashlight = true;
 
         flashlight.SetActive(true);
     }
@@ -123,11 +124,11 @@ public class CharacterController : MonoBehaviour
 
     public void ConnectUI()
     {
-        Debug.Log(name + " ui change here");
+        connectionScreen.Connect();
     }
 
     public void ReadyUI()
     {
-        Debug.Log(name + " ui change here");
+        connectionScreen.Ready();
     }
 }

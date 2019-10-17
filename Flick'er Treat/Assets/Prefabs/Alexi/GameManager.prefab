@@ -651,6 +651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfe64d5d11aa440b4b36e0d2ae0a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 0}
   startTimer: 0
   menuPanel: {fileID: 0}
   connectionPanel: {fileID: 0}
+  gamePanel: {fileID: 0}
+  timerText: {fileID: 0}
