@@ -30,6 +30,7 @@ public class CharacterController : MonoBehaviour
 
     // states
     bool isFlashlightOn;
+    public bool hasTurnedOnFlashlight { get; private set; }
     public bool isConnected { get; set; }
     public bool isReady { get; set; }
 
@@ -108,6 +109,7 @@ public class CharacterController : MonoBehaviour
     {
         movementForce = movementForceOn;
         isFlashlightOn = true;
+        hasTurnedOnFlashlight = true;
 
         flashlight.SetActive(true);
     }
