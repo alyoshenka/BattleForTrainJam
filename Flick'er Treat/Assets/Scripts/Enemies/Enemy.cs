@@ -67,13 +67,13 @@ public class Enemy : MonoBehaviour
         if (!fleeing)
         {
             approach();
+            transform.LookAt(target.transform);
         }
         else
         {
             flee();
+            transform.LookAt(-vecToTarget);
         }
-
-        transform.LookAt(target.transform);
     }
 
     private void approach()
@@ -115,6 +115,15 @@ public class Enemy : MonoBehaviour
             {
                 penetratingLights.RemoveAt(i);
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (fleeing && collision.gameObject.CompareTag("Void"))
+        {
+            health = maxHealth;
+            fleeing = false;
         }
     }
 }

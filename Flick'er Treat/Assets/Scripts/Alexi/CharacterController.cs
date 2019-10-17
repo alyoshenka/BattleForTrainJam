@@ -62,7 +62,7 @@ public class CharacterController : MonoBehaviour
     {
         GetInput();
         Move();
-        if (myRigidbody.velocity.magnitude > minimumVelocityRotationThreshold) { Rotate(); }
+        if (movementInput.magnitude > minimumVelocityRotationThreshold) { Rotate(); }
     }
 
     /// <summary>
@@ -98,7 +98,7 @@ public class CharacterController : MonoBehaviour
     /// </summary>
     void Rotate()
     {
-        float targetAngle = Mathf.Atan2(myRigidbody.velocity.x, myRigidbody.velocity.z) * Mathf.Rad2Deg;
+        float targetAngle = Mathf.Atan2(-movementInput.x, -movementInput.y) * Mathf.Rad2Deg;
         float currentAngle = transform.rotation.eulerAngles.y;
         if(currentAngle - targetAngle > 180) { currentAngle -= 360; }
         float rotation = Mathf.Lerp(currentAngle, targetAngle, rotationLerp);
