@@ -73,7 +73,5 @@ public class CharacterController : MonoBehaviour
         if(currentAngle - targetAngle > 180) { currentAngle -= 360; }
         float rotation = Mathf.Lerp(currentAngle, targetAngle, rotationLerp);
         transform.rotation = Quaternion.Euler(0, rotation, 0);
-
-        Debug.Log(targetAngle + ", " + currentAngle);
     }
 }
