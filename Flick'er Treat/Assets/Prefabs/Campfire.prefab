@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1864584026337303954}
   - component: {fileID: 1864584026337303983}
   - component: {fileID: 1864584026337303953}
+  - component: {fileID: 285947235}
   m_Layer: 0
   m_Name: Campfire
   m_TagString: Untagged
@@ -106,8 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470aaae1eb5ad544a9f8b79c3a07e53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 20
+  damageInterval: 1
   spaceController: {fileID: 1864584026337303983}
+  penetratingEnemies: []
 --- !u!114 &1864584026337303983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxScale: 30
   minScale: 5
-  GrowthSpeed: 1.5
+  GrowthSpeed: 0.05
   borderTransform: {fileID: 0}
 --- !u!114 &1864584026337303953
 MonoBehaviour:
@@ -138,4 +141,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 376682249162256547, guid: 3abb20b1801ce694fa0251c47b01fe20,
     type: 3}
+  bigEnemyPrefab: {fileID: 3432773463487502536, guid: 3c5b1b5d6cc0fa4438639ac573195ebe,
+    type: 3}
   spaceController: {fileID: 1864584026337303983}
+  spawnInterval: 3
+--- !u!135 &285947235
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864584026337303976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
