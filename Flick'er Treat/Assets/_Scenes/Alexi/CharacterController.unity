@@ -369,6 +369,7 @@ MonoBehaviour:
   rotationLerp: 0.2
   minimumVelocityRotationThreshold: 0.1
   playerID: 0
+  ThisIsNotTheFinalScene: 0
 --- !u!54 &333133207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -771,7 +772,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13062
+  m_Name: pb_Mesh28422
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1009,7 +1010,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25794
+  m_Name: pb_Mesh-41770
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8539,6 +8540,11 @@ PrefabInstance:
       propertyPath: connectionScreen
       value: 
       objectReference: {fileID: 153203064}
+    - target: {fileID: 357652770901664428, guid: 775a9d383c5f65d4eaef0e0f18b49f63,
+        type: 3}
+      propertyPath: ThisIsNotTheFinalScene
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 357652770823447834, guid: 775a9d383c5f65d4eaef0e0f18b49f63,
         type: 3}
       propertyPath: m_StaticEditorFlags
