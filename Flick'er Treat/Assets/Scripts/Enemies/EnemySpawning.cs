@@ -6,9 +6,9 @@ public class EnemySpawning : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject enemyPrefab;
+    GameObject enemyPrefab = default;
     [SerializeField]
-    GameObject bigEnemyPrefab;
+    GameObject bigEnemyPrefab = default;
     [SerializeField]
     SpaceController spaceController = default;
 
@@ -31,7 +31,7 @@ public class EnemySpawning : MonoBehaviour
         spawnTime += Time.deltaTime;
         if (spawnTime >= spawnInterval)
         {
-            spawnEnemies(1, spaceController.GetLerpedValue() / 2);
+            spawnEnemies(1, (spaceController.GetLerpedValue() / 2) * 67);
 
             spawnTime = 0;
         }
@@ -42,13 +42,14 @@ public class EnemySpawning : MonoBehaviour
         for (int i = 0; i < numToBeSpawned; i++)
         {
             float randomRotation = Random.Range(1, 360);
+            Debug.Log(randomRotation);
 
             float rotationInRadians = ((randomRotation) * (Mathf.PI / 180)); // Convert to radians
             float rotatedX = Mathf.Cos(rotationInRadians) - Mathf.Sin(rotationInRadians);
             float rotatedZ = Mathf.Sin(rotationInRadians) + Mathf.Cos(rotationInRadians);
 
-            Vector3 enemyPosition = new Vector3(rotatedX, 0, rotatedZ).normalized * radius;
-            enemyPosition.y = 5;
+            Vector3 enemyPosition = new Vector3(rotatedX, 0, rotatedZ).normalized * radius + transform.position;
+            enemyPosition.y = 0.5f;
             Instantiate<GameObject>(Mathf.Round(Random.Range(1,5)) == 1 ? bigEnemyPrefab : enemyPrefab , enemyPosition, Quaternion.identity);
         }
         
