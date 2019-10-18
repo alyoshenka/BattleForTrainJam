@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip flashlightClick;
+    public AudioClip grass;
+    public float grassVolume;
 
     public static GameManager Instance { get; private set; }
     public static GameState CurrentState { get; private set; }
