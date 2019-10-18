@@ -16,7 +16,7 @@ public class ControllerInputManager : MonoBehaviour
     static List<CharacterController> activePlayers;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         int maxChar;
         if(characters.Length > maxPlayerCount)
@@ -41,14 +41,14 @@ public class ControllerInputManager : MonoBehaviour
             characters[i].playerID = i;
         }
 
-        if(null == activePlayers) { activePlayers = new List<CharacterController>(); }
+        activePlayers = new List<CharacterController>(); 
     }
 
     public bool PressedStart()
     {
         foreach(CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetAnyButtonDown()) { return true; }
+            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Connect")) { return true; }
         }
         return false;
     }
@@ -113,5 +113,33 @@ public class ControllerInputManager : MonoBehaviour
                 Debug.LogError("too many players");
             }
         }
+    }
+
+    public bool CheckForPause()
+    {
+        foreach (CharacterController cc in activePlayers)
+        {
+            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Pause")) { return true; }
+        }
+        return false;
+    }
+
+    public bool CheckForMenu()
+    {
+        foreach (CharacterController cc in activePlayers)
+        {
+            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Menu")) { return true; }
+        }
+        return false;
+    }
+
+    public bool ToCredits()
+    {
+        return false;
+    }
+
+    public bool ToControls()
+    {
+        return false;
     }
 }
