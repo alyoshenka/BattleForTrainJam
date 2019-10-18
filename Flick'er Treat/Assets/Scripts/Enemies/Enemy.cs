@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         target = GameObject.Find("Campfire");
         penetratingLights = new List<GameObject>();
         audioSource = GetComponent<AudioSource>();
-        ambientInterval = Random.Range(8, 19);
+        ambientInterval = Random.Range(20, 60);
     }
 
     void Update()

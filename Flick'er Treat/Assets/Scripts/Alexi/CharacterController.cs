@@ -125,7 +125,6 @@ public class CharacterController : MonoBehaviour
         audioSource.volume = GameManager.Instance.grassVolume;
 
         audioSource.PlayOneShot(GameManager.Instance.flashlightClick, 1);
-        Debug.Log("click");
     }
 
     void TurnOffFlashlight()
@@ -138,7 +137,6 @@ public class CharacterController : MonoBehaviour
         audioSource.volume = GameManager.Instance.grassVolume * 2;
 
         audioSource.PlayOneShot(GameManager.Instance.flashlightClick, 1);
-        Debug.Log("click");
     }
 
     public void ConnectUI()
