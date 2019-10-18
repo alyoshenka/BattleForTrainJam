@@ -34,6 +34,11 @@ public class CampfireScript : MonoBehaviour
             health -= penetratingEnemies.Count;
 
             damageTime = 0;
+
+            if (health < maxHealth && penetratingEnemies.Count == 0)
+            {
+                health += 0.5f;
+            }
         }
 
         // Detect change in health
@@ -74,5 +79,15 @@ public class CampfireScript : MonoBehaviour
                 penetratingEnemies.RemoveAt(i);
             }
         }
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 }
