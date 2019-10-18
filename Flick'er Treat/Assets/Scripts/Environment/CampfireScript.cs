@@ -65,6 +65,7 @@ public class CampfireScript : MonoBehaviour
             if (health <= 0)
             {
                 Debug.Log("You have lost");
+                GameManager.Instance.Lose();
             }
         }
         
