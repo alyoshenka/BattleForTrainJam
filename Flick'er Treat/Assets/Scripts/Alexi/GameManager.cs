@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject creditsPanel;
     public GameObject controlsPanel;
+    public GameObject losePanel;
     public Text timerText;
+    public Text scoreText;
 
     [Header("Audio")]
     public AudioClip flashlightClick;
@@ -126,6 +128,10 @@ public class GameManager : MonoBehaviour
                 UpdateGame();
                 break;
             case GameState.gameOver:
+                if (inputManager.CheckForMenu())
+                {
+                    Menu();
+                }
                 break;
             default:
                 Debug.LogError("Invalid game state");
@@ -178,6 +184,12 @@ public class GameManager : MonoBehaviour
         foreach(CharacterController cc in FindObjectsOfType<CharacterController>()) { cc.isConnected = false; }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("menu");
+    }
+
+    public void Lose()
+    {
+        CurrentState = GameState.gameOver;
+        scoreText.text = "You survived the encroaching darkness for " + (int)survivalTime + " seconds";
     }
 
 }
