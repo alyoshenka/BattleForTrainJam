@@ -5161,36 +5161,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6230434521002610321, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[0]._keyboardKeyCode
-      value: 105
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230434521002610321, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[1]._keyboardKeyCode
-      value: 108
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230434521002610321, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[4]._keyboardKeyCode
-      value: 105
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230434521002610321, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[5]._keyboardKeyCode
-      value: 107
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230434521002610321, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[6]._keyboardKeyCode
-      value: 106
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230434521002610321, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[7]._keyboardKeyCode
-      value: 108
-      objectReference: {fileID: 0}
     - target: {fileID: 6230434521002610322, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
         type: 3}
       propertyPath: enemySpawner
@@ -5685,6 +5655,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: fed6fbf23bd446943957a8d9ccc1a2bd, type: 2}
+    - target: {fileID: 1864584026337303954, guid: 0c9d5b0466a169c41baa6ea921192266,
+        type: 3}
+      propertyPath: UISlider
+      value: 
+      objectReference: {fileID: 1089249277240113441}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9d5b0466a169c41baa6ea921192266, type: 3}
 --- !u!114 &1728991638 stripped
@@ -5768,3 +5743,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 103.59299, y: 89.99999, z: 89.99999}
+--- !u!114 &1089249277240113441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1089249277240113441, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1060158542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

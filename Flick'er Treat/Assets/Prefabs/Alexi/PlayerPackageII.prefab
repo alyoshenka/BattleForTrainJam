@@ -508,6 +508,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8576107387760798475, guid: ad8ae1a1e4a97fd439ec1c13b7860569,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8576107388784183921, guid: ad8ae1a1e4a97fd439ec1c13b7860569,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -940,6 +945,36 @@ PrefabInstance:
         type: 3}
       propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[8]._keyboardKeyCode
       value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[0]._keyboardKeyCode
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[1]._keyboardKeyCode
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[4]._keyboardKeyCode
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[5]._keyboardKeyCode
+      value: 107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[6]._keyboardKeyCode
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[1].actionElementMaps.Array.data[7]._keyboardKeyCode
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
         type: 3}

@@ -93,7 +93,11 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-
+                    //if (inputManager.PressedBack())
+                    //{
+                    //    controlsPanel.SetActive(false);
+                    //    creditsPanel.SetActive(false);
+                    //}
                 }
                
                 
