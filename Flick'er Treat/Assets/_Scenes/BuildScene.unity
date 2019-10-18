@@ -5166,37 +5166,6 @@ PrefabInstance:
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 1728991638}
-    - target: {fileID: 8654157380497975214, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5947541827535577704, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: e0029bbdc2043d94c9b753fda89d2ec8, type: 3}
-    - target: {fileID: 5947541827197341852, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: e0029bbdc2043d94c9b753fda89d2ec8, type: 3}
-    - target: {fileID: 5947541826261736499, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: e0029bbdc2043d94c9b753fda89d2ec8, type: 3}
-    - target: {fileID: 5947541826686960798, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: e0029bbdc2043d94c9b753fda89d2ec8, type: 3}
-    - target: {fileID: 8654157380909786326, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a122dc5cb5ffd5e468657f8f3ec95e9d,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6a10f42a4bcf4b4780f7d019fdc45f7, type: 3}
 --- !u!1001 &1134582911
@@ -5690,7 +5659,7 @@ PrefabInstance:
         type: 3}
       propertyPath: UISlider
       value: 
-      objectReference: {fileID: 2129090759}
+      objectReference: {fileID: 1089249277240113441}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9d5b0466a169c41baa6ea921192266, type: 3}
 --- !u!114 &1728991638 stripped
@@ -5774,7 +5743,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 103.59299, y: 89.99999, z: 89.99999}
---- !u!114 &2129090759 stripped
+--- !u!114 &1089249277240113441 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1089249277240113441, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
     type: 3}
