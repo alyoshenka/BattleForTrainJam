@@ -96,10 +96,10 @@ public class CharacterController : MonoBehaviour
     /// </summary>
     void Move()
     {
-        if (movementInput.x > 0) { myRigidbody.AddForce(Vector3.right * movementForce); }
-        else if (movementInput.x < 0) { myRigidbody.AddForce(Vector3.left * movementForce); }
-        if (movementInput.y > 0) { myRigidbody.AddForce(Vector3.forward * movementForce); }
-        else if (movementInput.y < 0) { myRigidbody.AddForce(Vector3.back * movementForce); }
+        if (movementInput.x > 0) { myRigidbody.AddForce(Vector3.right * movementForce * Time.deltaTime); }
+        else if (movementInput.x < 0) { myRigidbody.AddForce(Vector3.left * movementForce * Time.deltaTime); }
+        if (movementInput.y > 0) { myRigidbody.AddForce(Vector3.forward * movementForce * Time.deltaTime); }
+        else if (movementInput.y < 0) { myRigidbody.AddForce(Vector3.back * movementForce * Time.deltaTime); }
     }
 
     /// <summary>
