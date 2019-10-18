@@ -5191,6 +5191,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8618036972409784049, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618036972409784049, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1089249276902509990, guid: a6a10f42a4bcf4b4780f7d019fdc45f7,
         type: 3}
       propertyPath: m_AnchorMin.y
