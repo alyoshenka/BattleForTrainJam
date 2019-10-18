@@ -48,7 +48,7 @@ public class ControllerInputManager : MonoBehaviour
     {
         foreach(CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetAnyButtonDown()) { return true; }
+            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Connect")) { return true; }
         }
         return false;
     }
@@ -130,6 +130,16 @@ public class ControllerInputManager : MonoBehaviour
         {
             if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Menu")) { return true; }
         }
+        return false;
+    }
+
+    public bool ToCredits()
+    {
+        return false;
+    }
+
+    public bool ToControls()
+    {
         return false;
     }
 }

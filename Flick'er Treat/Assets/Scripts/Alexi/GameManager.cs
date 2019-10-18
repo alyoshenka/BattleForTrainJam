@@ -28,7 +28,12 @@ public class GameManager : MonoBehaviour
     public GameObject connectionPanel;
     public GameObject gamePanel;
     public GameObject pausePanel;
+    public GameObject creditsPanel;
+    public GameObject controlsPanel;
     public Text timerText;
+
+    [Header("Audio")]
+    public AudioClip flashlightClick;
 
     public static GameManager Instance { get; private set; }
     public static GameState CurrentState { get; private set; }
@@ -39,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     // vals
     float survivalTime;
+    bool inMainMenu;
 
     void Awake()
     {
@@ -56,6 +62,7 @@ public class GameManager : MonoBehaviour
 
         survivalTime = 0;
         isPaused = false;
+        inMainMenu = true;
     }
 
     // Update is called once per frame
@@ -64,12 +71,30 @@ public class GameManager : MonoBehaviour
         switch (CurrentState)
         {
             case GameState.startMenu:
-                if (inputManager.PressedStart())
+                if (inMainMenu)
                 {
-                    menuPanel.SetActive(false);
-                    connectionPanel.SetActive(true);
-                    CurrentState = GameState.connectionMenu;
+                    if (inputManager.ToCredits())
+                    {
+
+                    }
+                    else if (inputManager.ToControls())
+                    {
+
+
+                    }
+                    else if (inputManager.PressedStart())
+                    {
+                        menuPanel.SetActive(false);
+                        connectionPanel.SetActive(true);
+                        CurrentState = GameState.connectionMenu;
+                    }
                 }
+                else
+                {
+
+                }
+               
+                
                 break;
             case GameState.connectionMenu:
                 if (inputManager.AllConnectedPlayersReady())

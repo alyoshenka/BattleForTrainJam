@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour
     [Tooltip("Flasklight object")] public GameObject flashlight;
     public CharacterSelection connectionScreen;
     public Animator animator;
+    public AudioSource audioSource;
 
     [Header("Controls")]
     [Tooltip("Movement force - flashlight ON")] public float movementForceOn;
