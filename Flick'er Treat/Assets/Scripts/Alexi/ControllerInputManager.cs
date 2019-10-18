@@ -132,11 +132,37 @@ public class ControllerInputManager : MonoBehaviour
 
     public bool ToCredits()
     {
+        foreach (CharacterController cc in activePlayers)
+        {
+            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("MoveLeft"))
+            {
+                return true;
+            }
+        }
         return false;
     }
 
     public bool ToControls()
     {
+        foreach (CharacterController cc in activePlayers)
+        {
+            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("MoveRight"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool PressedBack()
+    {
+        foreach (CharacterController cc in activePlayers)
+        {
+            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("MoveBack"))
+            {
+                return true;
+            }
+        }
         return false;
     }
 }
