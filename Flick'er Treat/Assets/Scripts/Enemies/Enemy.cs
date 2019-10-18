@@ -24,13 +24,18 @@ public class Enemy : MonoBehaviour
     float approachSpeed = 1;
     [SerializeField]
     float fleeSpeed = 1.5f;
-
+    [SerializeField]
+    AudioClip[] ambientClips;
+    [SerializeField]
+    AudioClip[] damageClips;
+    AudioSource audioSource;
 
     void Start()
     {
         maxHealth = health;
         target = GameObject.Find("Campfire");
         penetratingLights = new List<GameObject>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,13 +59,14 @@ public class Enemy : MonoBehaviour
         }
 
         // Decide if approaching or fleeing
-        if (health >= maxHealth)
+        if (fleeing && health >= maxHealth)
         {
             fleeing = false;
         } 
-        else if (health <= 0)
+        else if (!fleeing && health <= 0)
         {
             fleeing = true;
+            audioSource.PlayOneShot(damageClips[(int)Mathf.Round(Random.Range(0, damageClips.Length))]);
         }
 
         // Movement
