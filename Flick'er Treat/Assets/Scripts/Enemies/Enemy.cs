@@ -48,9 +48,9 @@ public class Enemy : MonoBehaviour
             }
             //Debug.Log(health);
         } //Regain Health
-        else if (health < maxHealth)
+        else if (health < maxHealth && penetratingLights.Count == 0)
         {
-            //health += 
+            health += Time.deltaTime / 5;
         }
 
         // Decide if approaching or fleeing
@@ -125,6 +125,7 @@ public class Enemy : MonoBehaviour
         if (fleeing && collision.gameObject.CompareTag("Void"))
         {
             health = maxHealth;
+            penetratingLights.Clear();
         }
     }
 }
