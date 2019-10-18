@@ -12,6 +12,7 @@ public class CharacterController : MonoBehaviour
     [Header("Components")]
     [Tooltip("Flasklight object")] public GameObject flashlight;
     public CharacterSelection connectionScreen;
+    public Animator animator;
 
     [Header("Controls")]
     [Tooltip("Movement force - flashlight ON")] public float movementForceOn;
@@ -65,6 +66,7 @@ public class CharacterController : MonoBehaviour
         GetInput();
         Move();
         if (movementInput.magnitude > minimumVelocityRotationThreshold) { Rotate(); }
+        else { animator.SetTrigger("Idle"); }
     }
 
     /// <summary>
@@ -114,6 +116,7 @@ public class CharacterController : MonoBehaviour
         hasTurnedOnFlashlight = true;
 
         flashlight.SetActive(true);
+        animator.SetTrigger("Walk");
     }
 
     void TurnOffFlashlight()
@@ -122,6 +125,7 @@ public class CharacterController : MonoBehaviour
         isFlashlightOn = false;
 
         flashlight.SetActive(false);
+        animator.SetTrigger("Run");
     }
 
     public void ConnectUI()
