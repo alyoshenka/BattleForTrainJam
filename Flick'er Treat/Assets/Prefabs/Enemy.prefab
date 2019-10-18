@@ -127,12 +127,17 @@ MonoBehaviour:
   lightsNeeded: 1
   target: {fileID: 0}
   penetratingLights: []
-  approachSpeed: 1
+  approachSpeed: 0
   fleeSpeed: 1.5
-  ambientClips: []
+  ambientClips:
+  - {fileID: 8300000, guid: 076b8965608a84a48b0dad6f8f3c465e, type: 3}
+  - {fileID: 8300000, guid: 9ec7a2e8807147a46946a857b7623512, type: 3}
+  - {fileID: 8300000, guid: d628989c53ea47042ac49de6eecf7277, type: 3}
+  - {fileID: 8300000, guid: 545bb43bb9a074d47a0fe84cda57995a, type: 3}
   damageClips:
   - {fileID: 8300000, guid: 0d3364cb591876d4a8183ef058bca7a9, type: 3}
   - {fileID: 8300000, guid: ef823878d94e1ab4ebef67e141399c33, type: 3}
+  ambientInterval: 0
 --- !u!82 &7499714607308137111
 AudioSource:
   m_ObjectHideFlags: 0
