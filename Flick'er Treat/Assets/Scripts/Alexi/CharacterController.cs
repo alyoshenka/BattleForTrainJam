@@ -12,6 +12,8 @@ public class CharacterController : MonoBehaviour
     [Header("Components")]
     [Tooltip("Flasklight object")] public GameObject flashlight;
     public CharacterSelection connectionScreen;
+    public Animator animator;
+    public AudioSource audioSource;
 
     [Header("Controls")]
     [Tooltip("Movement force - flashlight ON")] public float movementForceOn;
@@ -42,7 +44,7 @@ public class CharacterController : MonoBehaviour
     float movementForce;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
         myRigidbody = GetComponent<Rigidbody>();
@@ -54,15 +56,18 @@ public class CharacterController : MonoBehaviour
 
         TurnOffFlashlight();
 
-        gameObject.SetActive(ThisIsNotTheFinalScene);
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.isPaused) { return; }
+
         GetInput();
         Move();
         if (movementInput.magnitude > minimumVelocityRotationThreshold) { Rotate(); }
+        else { animator.SetTrigger("Idle"); }
     }
 
     /// <summary>
@@ -112,6 +117,7 @@ public class CharacterController : MonoBehaviour
         hasTurnedOnFlashlight = true;
 
         flashlight.SetActive(true);
+        animator.SetTrigger("Walk");
     }
 
     void TurnOffFlashlight()
@@ -120,6 +126,7 @@ public class CharacterController : MonoBehaviour
         isFlashlightOn = false;
 
         flashlight.SetActive(false);
+        animator.SetTrigger("Run");
     }
 
     public void ConnectUI()

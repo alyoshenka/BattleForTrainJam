@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c0d1bb96e377fc4698a7a51640b6a69
+guid: 333689b7ec188ad4391645a1376e069d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -63,8 +63,9 @@ ModelImporter:
     2100002: costume
     4300000: pumpkin_body
     4300002: pumpkin_clothes
-    7400000: Walk
-    7400002: Walk
+    7400000: Idle
+    7400002: Idle
+    7400004: mixamo.com (1)
     9500000: //RootNode
     13700000: pumpkin_body
     13700002: pumpkin_clothes
@@ -98,17 +99,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: Idle
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 98
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

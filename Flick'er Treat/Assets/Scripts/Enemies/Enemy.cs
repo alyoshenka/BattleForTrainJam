@@ -40,6 +40,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.isPaused) { return; }
+
         vecToTarget = (target.transform.position - transform.position).normalized;
         Debug.DrawRay(transform.position, vecToTarget * 3, Color.red);
 

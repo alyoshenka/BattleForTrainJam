@@ -7,7 +7,7 @@ public class CharacterSelection : MonoBehaviour
     public GameObject selection;
     public GameObject ready;
 
-    void Start()
+    void Awake()
     {
         selection.SetActive(false);
         ready.SetActive(false);

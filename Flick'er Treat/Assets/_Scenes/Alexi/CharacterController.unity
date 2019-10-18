@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4b65c5adbd8b29b4c9ce3f5d538329af, type: 2}
+    - target: {fileID: 9500000, guid: 5c0d1bb96e377fc4698a7a51640b6a69, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 9acfc7a76b046d24db962e36a02d206a, type: 3}
+    - target: {fileID: 9500000, guid: 5c0d1bb96e377fc4698a7a51640b6a69, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c0d1bb96e377fc4698a7a51640b6a69, type: 3}
 --- !u!114 &153203068 stripped
@@ -735,7 +743,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-26836
+  m_Name: pb_Mesh-72574
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
