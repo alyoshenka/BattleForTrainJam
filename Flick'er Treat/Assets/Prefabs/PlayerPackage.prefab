@@ -211,7 +211,7 @@ PrefabInstance:
         type: 3}
       propertyPath: connectionScreen
       value: 
-      objectReference: {fileID: 4021307117474375977}
+      objectReference: {fileID: 0}
     - target: {fileID: 357652770901664428, guid: 775a9d383c5f65d4eaef0e0f18b49f63,
         type: 3}
       propertyPath: playerID
@@ -226,6 +226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 357652770823448032, guid: 775a9d383c5f65d4eaef0e0f18b49f63,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775a9d383c5f65d4eaef0e0f18b49f63, type: 3}
