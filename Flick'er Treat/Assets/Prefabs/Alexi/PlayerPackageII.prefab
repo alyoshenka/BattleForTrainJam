@@ -169,6 +169,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8576107388422989939, guid: ad8ae1a1e4a97fd439ec1c13b7860569,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a122dc5cb5ffd5e468657f8f3ec95e9d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8ae1a1e4a97fd439ec1c13b7860569, type: 3}
 --- !u!224 &8654157381554947796 stripped
@@ -395,6 +401,36 @@ PrefabInstance:
       propertyPath: characters.Array.data[3]
       value: 
       objectReference: {fileID: 858895871161478326}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._defaultKeyboardMaps.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.players.Array.data[3]._defaultKeyboardMaps.Array.data[0]._categoryId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.players.Array.data[3]._defaultKeyboardMaps.Array.data[0]._layoutId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.players.Array.data[4]._defaultKeyboardMaps.Array.data[0]._categoryId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443306767328810479, guid: bd0e966048b546f4bb4cbd6afad86259,
+        type: 3}
+      propertyPath: _userData.players.Array.data[4]._defaultKeyboardMaps.Array.data[0]._layoutId
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd0e966048b546f4bb4cbd6afad86259, type: 3}
 --- !u!4 &6230434521002610320 stripped
@@ -418,17 +454,17 @@ PrefabInstance:
     - target: {fileID: 6404959588557141872, guid: 8540f4a31b0112843ac3a73b34c8bd27,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015532494
+      value: 7.25
       objectReference: {fileID: 0}
     - target: {fileID: 6404959588557141872, guid: 8540f4a31b0112843ac3a73b34c8bd27,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.006272316
+      value: 0.984
       objectReference: {fileID: 0}
     - target: {fileID: 6404959588557141872, guid: 8540f4a31b0112843ac3a73b34c8bd27,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.10337353
+      value: -9.27
       objectReference: {fileID: 0}
     - target: {fileID: 6404959588557141872, guid: 8540f4a31b0112843ac3a73b34c8bd27,
         type: 3}
@@ -490,6 +526,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1089249276708196970}
+    - target: {fileID: 6404959589957317345, guid: 8540f4a31b0112843ac3a73b34c8bd27,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 862b78157c409ed469a40d23690e9b51, type: 2}
     - target: {fileID: 6635033168550313673, guid: 8540f4a31b0112843ac3a73b34c8bd27,
         type: 3}
       propertyPath: connectionScreen
@@ -500,6 +541,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1089249277270106229}
+    - target: {fileID: 6404959588371726590, guid: 8540f4a31b0112843ac3a73b34c8bd27,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 862b78157c409ed469a40d23690e9b51, type: 2}
     - target: {fileID: 6635033168771091517, guid: 8540f4a31b0112843ac3a73b34c8bd27,
         type: 3}
       propertyPath: connectionScreen
