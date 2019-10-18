@@ -134,7 +134,7 @@ public class ControllerInputManager : MonoBehaviour
     {
         foreach (CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveVertical") > 0)
+            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveHorizontal") > 0.5f)
             {
                 return true;
             }
@@ -146,7 +146,7 @@ public class ControllerInputManager : MonoBehaviour
     {
         foreach (CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveHorizontal") < 0)
+            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveHorizontal") < -0.5f)
             {
                 return true;
             }
@@ -158,7 +158,7 @@ public class ControllerInputManager : MonoBehaviour
     {
         foreach (CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveHorizontal") > 0)
+            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveVertical") > 0.5f)
             {
                 return true;
             }
