@@ -100,7 +100,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ScarecrowWalk
+      name: mixamo.com
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 29
