@@ -6033,7 +6033,7 @@ GameObject:
   - component: {fileID: 1811266838924900168}
   - component: {fileID: 1811266837350584144}
   m_Layer: 0
-  m_Name: Campfire
+  m_Name: NOTCampfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
