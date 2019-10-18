@@ -77,23 +77,29 @@ public class GameManager : MonoBehaviour
                 {
                     if (inputManager.ToCredits())
                     {
-
+                        creditsPanel.SetActive(true);
+                        inMainMenu = false;
                     }
                     else if (inputManager.ToControls())
                     {
-
-
+                        controlsPanel.SetActive(true);
+                        menuPanel.SetActive(false);
+                        inMainMenu = false;
                     }
                     else if (inputManager.PressedStart())
                     {
-                        menuPanel.SetActive(false);
                         connectionPanel.SetActive(true);
                         CurrentState = GameState.connectionMenu;
                     }
                 }
                 else
                 {
-
+                    if (inputManager.PressedBack())
+                    {
+                        controlsPanel.SetActive(false);
+                        creditsPanel.SetActive(false);
+                        inMainMenu = true;
+                    }
                 }
                
                 

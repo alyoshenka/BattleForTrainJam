@@ -44,7 +44,7 @@ public class CharacterController : MonoBehaviour
     float movementForce;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         player = ReInput.players.GetPlayer(playerID);
         myRigidbody = GetComponent<Rigidbody>();
