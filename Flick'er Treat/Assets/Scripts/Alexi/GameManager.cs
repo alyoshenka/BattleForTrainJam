@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
                     if (inputManager.ToCredits())
                     {
                         creditsPanel.SetActive(true);
+                        menuPanel.SetActive(false);
                         inMainMenu = false;
                     }
                     else if (inputManager.ToControls())
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
                     }
                     else if (inputManager.PressedStart())
                     {
+                        menuPanel.SetActive(false);
                         connectionPanel.SetActive(true);
                         CurrentState = GameState.connectionMenu;
                     }
@@ -98,11 +100,10 @@ public class GameManager : MonoBehaviour
                     {
                         controlsPanel.SetActive(false);
                         creditsPanel.SetActive(false);
+                        menuPanel.SetActive(true);
                         inMainMenu = true;
                     }
-                }
-               
-                
+                }                             
                 break;
             case GameState.connectionMenu:
                 if (inputManager.AllConnectedPlayersReady())

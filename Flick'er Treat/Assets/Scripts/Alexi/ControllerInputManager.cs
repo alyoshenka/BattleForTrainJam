@@ -132,9 +132,9 @@ public class ControllerInputManager : MonoBehaviour
 
     public bool ToCredits()
     {
-        foreach (CharacterController cc in activePlayers)
+        foreach (CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("MoveLeft"))
+            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveVertical") > 0)
             {
                 return true;
             }
@@ -144,9 +144,9 @@ public class ControllerInputManager : MonoBehaviour
 
     public bool ToControls()
     {
-        foreach (CharacterController cc in activePlayers)
+        foreach (CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("MoveRight"))
+            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveHorizontal") < 0)
             {
                 return true;
             }
@@ -156,9 +156,9 @@ public class ControllerInputManager : MonoBehaviour
 
     public bool PressedBack()
     {
-        foreach (CharacterController cc in activePlayers)
+        foreach (CharacterController cc in characters)
         {
-            if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("MoveBack"))
+            if (ReInput.players.GetPlayer(cc.playerID).GetAxis("MoveHorizontal") > 0)
             {
                 return true;
             }
