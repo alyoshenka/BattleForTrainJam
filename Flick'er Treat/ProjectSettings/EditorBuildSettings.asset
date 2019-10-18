@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Alexi/CurrentBuild.unity
     guid: 821172f01e9d5bd40946ffefb5b4152a
+  - enabled: 1
+    path: Assets/_Scenes/BuildScene.unity
+    guid: 6e4113be2a2c5804fbf0bc221e5d229c
   m_configObjects: {}
