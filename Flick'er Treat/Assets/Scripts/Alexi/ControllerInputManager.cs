@@ -65,8 +65,6 @@ public class ControllerInputManager : MonoBehaviour
                     cc.isConnected = true;
                     cc.ConnectUI();
                     activePlayers.Add(cc);
-
-                    Debug.Log(cc.name + " connected");
                 }
             }
         }
@@ -83,7 +81,6 @@ public class ControllerInputManager : MonoBehaviour
                 if (ReInput.players.GetPlayer(cc.playerID).GetButtonDown("Ready"))
                 {
                     cc.isReady = true;
-                    Debug.Log(cc.name + " ready");
                     cc.ReadyUI();
                 }
                 else { return false; }

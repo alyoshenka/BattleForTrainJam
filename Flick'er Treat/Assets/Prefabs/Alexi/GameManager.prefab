@@ -768,6 +768,6 @@ MonoBehaviour:
   creditsPanel: {fileID: 0}
   controlsPanel: {fileID: 0}
   timerText: {fileID: 0}
-  flashlightClick: {fileID: 0}
+  flashlightClick: {fileID: 8300000, guid: 6e270261fe53edc4cb36310cd0b2e8e1, type: 3}
   grass: {fileID: 8300000, guid: e0029bbdc2043d94c9b753fda89d2ec8, type: 3}
   grassVolume: 0.1
