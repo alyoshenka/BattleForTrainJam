@@ -42,7 +42,7 @@ public class CharacterController : MonoBehaviour
     float movementForce;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
         myRigidbody = GetComponent<Rigidbody>();
@@ -60,6 +60,8 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.isPaused) { return; }
+
         GetInput();
         Move();
         if (movementInput.magnitude > minimumVelocityRotationThreshold) { Rotate(); }

@@ -24,6 +24,8 @@ public class EnemySpawning : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.isPaused) { return; }
+
         if (Input.GetMouseButtonDown(0))
         {
             spawnEnemies(1, spaceController.GetLerpedValue() / 2);

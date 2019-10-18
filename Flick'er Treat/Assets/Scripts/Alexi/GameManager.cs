@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(ControllerInputManager))]
 public class GameManager : MonoBehaviour
@@ -26,10 +27,12 @@ public class GameManager : MonoBehaviour
     public GameObject menuPanel;
     public GameObject connectionPanel;
     public GameObject gamePanel;
+    public GameObject pausePanel;
     public Text timerText;
 
     public static GameManager Instance { get; private set; }
     public static GameState CurrentState { get; private set; }
+    public static bool isPaused { get; private set; }
 
     // components
     ControllerInputManager inputManager;
@@ -37,8 +40,7 @@ public class GameManager : MonoBehaviour
     // vals
     float survivalTime;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Instance = this;
 
@@ -50,8 +52,10 @@ public class GameManager : MonoBehaviour
         menuPanel.SetActive(true);
         connectionPanel.SetActive(false);
         gamePanel.SetActive(false);
+        pausePanel.SetActive(false);
 
         survivalTime = 0;
+        isPaused = false;
     }
 
     // Update is called once per frame
@@ -98,5 +102,47 @@ public class GameManager : MonoBehaviour
     {
         survivalTime += Time.deltaTime;
         timerText.text = (int)survivalTime + "s";
+
+        if (isPaused)
+        {
+            if (inputManager.CheckForPause())
+            {
+                UnPause();
+            }
+            if (inputManager.CheckForMenu())
+            {
+                Menu();
+            }
+        }
+        else
+        {
+            if (inputManager.CheckForPause())
+            {
+                Pause();
+            }
+        }
     }
+
+    void Pause()
+    {
+        isPaused = true;
+        pausePanel.SetActive(true);
+        Debug.Log("pause");
+    }
+
+    void UnPause()
+    {
+        isPaused = false;
+        pausePanel.SetActive(false);
+        Debug.Log("unpause");
+    }
+
+    void Menu()
+    {
+        isPaused = false;
+        foreach(CharacterController cc in FindObjectsOfType<CharacterController>()) { cc.isConnected = false; }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log("menu");
+    }
+
 }
