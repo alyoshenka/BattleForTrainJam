@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     AudioClip[] damageClips;
     AudioSource audioSource;
+    float ambientTime = 0;
+    [SerializeField]
+    float ambientInterval;
 
     void Start()
     {
@@ -36,6 +39,7 @@ public class Enemy : MonoBehaviour
         target = GameObject.Find("Campfire");
         penetratingLights = new List<GameObject>();
         audioSource = GetComponent<AudioSource>();
+        ambientInterval = Random.Range(8, 19);
     }
 
     void Update()
@@ -83,6 +87,14 @@ public class Enemy : MonoBehaviour
             flee();
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-(target.transform.position - transform.position).normalized), 0.05f);
 
+        }
+
+        // Ambient sounds
+        ambientTime += Time.deltaTime;
+        if (ambientTime >= ambientInterval)
+        {
+            audioSource.PlayOneShot(ambientClips[(int)Mathf.Round(Random.Range(0, ambientClips.Length))]);
+            ambientTime = 0;
         }
     }
 
