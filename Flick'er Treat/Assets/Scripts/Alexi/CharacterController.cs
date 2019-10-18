@@ -54,7 +54,7 @@ public class CharacterController : MonoBehaviour
 
         TurnOffFlashlight();
 
-        gameObject.SetActive(ThisIsNotTheFinalScene);
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame

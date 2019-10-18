@@ -55,7 +55,6 @@ public class ControllerInputManager : MonoBehaviour
 
     void CheckForConnections()
     {
-        Debug.Log(characters.Length);
         foreach (CharacterController cc in characters)
         {
             if (!cc.isConnected)

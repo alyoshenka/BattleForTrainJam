@@ -76,15 +76,14 @@ public class GameManager : MonoBehaviour
                 {
                     connectionPanel.SetActive(false);
                     CurrentState = GameState.waitForPlayerReady;
+                    gamePanel.SetActive(true);
                 }
                 break;
             case GameState.waitForPlayerReady:
                 if (inputManager.AllPlayersReadyForEnemies())
                 {
-                    Debug.Log("starting game");
                     CurrentState = GameState.inGame;
                     enemySpawner.SetEnabled(true);
-                    gamePanel.SetActive(true);
                 }
                 break;
             case GameState.inGame:
@@ -101,7 +100,7 @@ public class GameManager : MonoBehaviour
     void UpdateGame()
     {
         survivalTime += Time.deltaTime;
-        timerText.text = (int)survivalTime + "s";
+        timerText.text = "Survival time: " + (int)survivalTime;
 
         if (isPaused)
         {
