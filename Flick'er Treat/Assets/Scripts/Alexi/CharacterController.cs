@@ -72,6 +72,14 @@ public class CharacterController : MonoBehaviour
             animator.SetTrigger("Idle");
             audioSource.volume = 0;
         }
+
+        float velocity = myRigidbody.velocity.magnitude / 4.3f;
+        if (velocity > 0.1)
+        {
+            Debug.Log(velocity );
+        }
+        animator.SetFloat("Speed", velocity);
+        
     }
 
     /// <summary>
