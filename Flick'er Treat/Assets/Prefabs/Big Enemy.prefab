@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0.5
-  lightsNeeded: 1
+  lightsNeeded: 2
   target: {fileID: 0}
   penetratingLights: []
   approachSpeed: 1
