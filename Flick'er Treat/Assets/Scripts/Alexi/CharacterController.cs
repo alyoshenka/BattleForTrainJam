@@ -14,7 +14,6 @@ public class CharacterController : MonoBehaviour
     public CharacterSelection connectionScreen;
     public Animator animator;
     public AudioSource audioSource;
-    public AudioSource grass;
 
     [Header("Controls")]
     [Tooltip("Movement force - flashlight ON")] public float movementForceOn;
@@ -58,8 +57,6 @@ public class CharacterController : MonoBehaviour
         TurnOffFlashlight();
 
         gameObject.SetActive(false);
-
-        grass.clip = GameManager.Instance.grass;
     }
 
     // Update is called once per frame
@@ -73,7 +70,7 @@ public class CharacterController : MonoBehaviour
         else
         {
             animator.SetTrigger("Idle");
-            grass.volume = 0;
+            audioSource.volume = 0;
         }
     }
 
@@ -125,9 +122,9 @@ public class CharacterController : MonoBehaviour
 
         flashlight.SetActive(true);
         animator.SetTrigger("Walk");
-        grass.volume = GameManager.Instance.grassVolume;
-        audioSource.clip = GameManager.Instance.flashlightClick;
-        audioSource.Play();
+        audioSource.volume = GameManager.Instance.grassVolume;
+
+        audioSource.PlayOneShot(GameManager.Instance.flashlightClick, 1);
     }
 
     void TurnOffFlashlight()
@@ -137,9 +134,9 @@ public class CharacterController : MonoBehaviour
 
         flashlight.SetActive(false);
         animator.SetTrigger("Run");
-        grass.volume = GameManager.Instance.grassVolume * 2;
-        audioSource.clip = GameManager.Instance.flashlightClick;
-        audioSource.Play();
+        audioSource.volume = GameManager.Instance.grassVolume * 2;
+
+        audioSource.PlayOneShot(GameManager.Instance.flashlightClick, 1);
     }
 
     public void ConnectUI()
