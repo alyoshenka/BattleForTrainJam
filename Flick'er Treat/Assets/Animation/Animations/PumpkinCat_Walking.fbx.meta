@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0fbda9474dec6b47a46ca32635c52d3
+guid: ccf64b21a6572db4880eccf7b0c31370
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -28,10 +28,9 @@ ModelImporter:
     100044: mixamorig:Spine
     100046: mixamorig:Spine1
     100048: mixamorig:Spine2
-    100050: scarecrow_body
-    100052: scarecrow_clothes
-    100054: scarecrow_hat
-    100056: //RootNode
+    100050: pumpkin_body
+    100052: pumpkin_clothes
+    100054: //RootNode
     400000: mixamorig:Head
     400002: mixamorig:HeadTop_End
     400004: mixamorig:Hips
@@ -57,21 +56,17 @@ ModelImporter:
     400044: mixamorig:Spine
     400046: mixamorig:Spine1
     400048: mixamorig:Spine2
-    400050: scarecrow_body
-    400052: scarecrow_clothes
-    400054: scarecrow_hat
-    400056: //RootNode
+    400050: pumpkin_body
+    400052: pumpkin_clothes
+    400054: //RootNode
     2100000: body
     2100002: costume
-    4300000: scarecrow_body
-    4300002: scarecrow_clothes
-    4300004: scarecrow_hat
-    7400000: ScarecrowWalk
-    7400002: mixamo.com
+    4300000: pumpkin_body
+    4300002: pumpkin_clothes
+    7400000: mixamo.com
     9500000: //RootNode
-    13700000: scarecrow_body
-    13700002: scarecrow_clothes
-    13700004: scarecrow_hat
+    13700000: pumpkin_body
+    13700002: pumpkin_clothes
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -99,35 +94,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 29
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
