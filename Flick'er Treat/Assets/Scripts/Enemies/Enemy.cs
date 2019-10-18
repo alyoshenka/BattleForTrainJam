@@ -67,12 +67,14 @@ public class Enemy : MonoBehaviour
         if (!fleeing)
         {
             approach();
-            transform.LookAt(target.transform);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation((target.transform.position - transform.position).normalized), 0.05f );
+            
         }
         else
         {
             flee();
-            transform.LookAt(-vecToTarget);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-(target.transform.position - transform.position).normalized), 0.05f);
+
         }
     }
 
@@ -123,7 +125,6 @@ public class Enemy : MonoBehaviour
         if (fleeing && collision.gameObject.CompareTag("Void"))
         {
             health = maxHealth;
-            fleeing = false;
         }
     }
 }
