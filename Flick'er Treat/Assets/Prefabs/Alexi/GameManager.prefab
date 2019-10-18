@@ -765,4 +765,9 @@ MonoBehaviour:
   connectionPanel: {fileID: 0}
   gamePanel: {fileID: 0}
   pausePanel: {fileID: 0}
+  creditsPanel: {fileID: 0}
+  controlsPanel: {fileID: 0}
   timerText: {fileID: 0}
+  flashlightClick: {fileID: 0}
+  grass: {fileID: 8300000, guid: e0029bbdc2043d94c9b753fda89d2ec8, type: 3}
+  grassVolume: 0.1
