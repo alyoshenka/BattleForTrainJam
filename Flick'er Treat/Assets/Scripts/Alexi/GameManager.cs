@@ -189,6 +189,7 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         CurrentState = GameState.gameOver;
+        losePanel.SetActive(true);
         scoreText.text = "You survived the encroaching darkness for " + (int)survivalTime + " seconds";
     }
 
