@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1864584026337303983}
   - component: {fileID: 1864584026337303953}
   - component: {fileID: 285947235}
+  - component: {fileID: 1864437115}
   m_Layer: 0
   m_Name: Campfire
   m_TagString: Untagged
@@ -112,6 +113,8 @@ MonoBehaviour:
   damageInterval: 1
   spaceController: {fileID: 1864584026337303983}
   penetratingEnemies: []
+  UISlider: {fileID: 0}
+  damageClip: {fileID: 8300000, guid: ff6e84bbb0465a94d83b987097308666, type: 3}
 --- !u!114 &1864584026337303983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,10 +127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc03bf8027f20942b141ebc5253e9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScale: 0.9847053
-  minScale: 0.2
+  maxScale: 44
+  minScale: 10
   GrowthSpeed: 0.05
   borderTransform: {fileID: 0}
+  camTransform: {fileID: 0}
+  maxZoom: 15
 --- !u!114 &1864584026337303953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,12 +145,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77142cdb6b0e6c4bb9155f7a3b5e5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabled: 1
   enemyPrefab: {fileID: 376682249162256547, guid: 3abb20b1801ce694fa0251c47b01fe20,
     type: 3}
   bigEnemyPrefab: {fileID: 3432773463487502536, guid: 3c5b1b5d6cc0fa4438639ac573195ebe,
     type: 3}
   spaceController: {fileID: 1864584026337303983}
-  spawnInterval: 1
+  spawnInterval: 10
 --- !u!135 &285947235
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -159,6 +165,102 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &1864437115
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864584026337303976}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 595ab2b0a43ac294aaa4c4bd1c138184, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &370956034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 303131796351490262, guid: 27d8fd3e407a04b47b33a2230294aa7b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d8fd3e407a04b47b33a2230294aa7b, type: 3}

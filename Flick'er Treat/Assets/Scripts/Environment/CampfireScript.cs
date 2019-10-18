@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CampfireScript : MonoBehaviour
 {
@@ -17,12 +18,18 @@ public class CampfireScript : MonoBehaviour
     SpaceController spaceController = default;
     [SerializeField]
     List<GameObject> penetratingEnemies;
+    [SerializeField]
+    Slider UISlider;
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip damageClip;
 
     void Start()
     {
         maxHealth = health;
         cachedHealth = health;
         penetratingEnemies = new List<GameObject>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,8 +51,15 @@ public class CampfireScript : MonoBehaviour
         // Detect change in health
         if (cachedHealth != health)
         {
+            if (health < cachedHealth)
+            {
+                audioSource.PlayOneShot(damageClip, 0.5f);
+            }
+
             spaceController.SetBorderScale(health / maxHealth);
             cachedHealth = health;
+            UISlider.value = Mathf.Abs( (health / maxHealth) -1 );
+            
 
             // Lose
             if (health <= 0)
