@@ -84,6 +84,8 @@ public class GameManager : MonoBehaviour
                 {
                     CurrentState = GameState.inGame;
                     enemySpawner.SetEnabled(true);
+                    enemySpawner.spawnEnemies(2, 17);
+                    gamePanel.SetActive(true);
                 }
                 break;
             case GameState.inGame:
